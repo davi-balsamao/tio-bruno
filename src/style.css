@@ -1,0 +1,153 @@
+@import 'tailwindcss';
+
+/* Fontes carregadas de forma não-bloqueante via <link> no HTML
+   (Figtree para títulos/UI + Noto Sans para o corpo). */
+
+/* ------------------------------------------------------------------ */
+/*  Tema da marca (paleta sálvia / grafite / creme)                    */
+/* ------------------------------------------------------------------ */
+@theme {
+  --font-sans: 'Noto Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Figtree', ui-sans-serif, system-ui, sans-serif;
+
+  /* Verde sálvia (marca) */
+  --color-sage-50: #f2f6f2;
+  --color-sage-100: #e2ebe2;
+  --color-sage-200: #c6d8c8;
+  --color-sage-300: #a3bfa6;
+  --color-sage-400: #7c9885; /* cor principal da arte */
+  --color-sage-500: #64826d;
+  --color-sage-600: #4f6957;
+  --color-sage-700: #405446;
+  --color-sage-800: #35443a;
+  --color-sage-900: #2c3830;
+
+  /* Grafite (texto/títulos) */
+  --color-graphite: #2b3230;
+  --color-graphite-soft: #4a534f;
+
+  /* Creme (fundo) */
+  --color-cream: #f5f3ee;
+  --color-cream-deep: #ece8df;
+
+  /* Verde WhatsApp (CTA) */
+  --color-whats: #25d366;
+  --color-whats-dark: #1da851;
+}
+
+/* ------------------------------------------------------------------ */
+/*  Base                                                               */
+/* ------------------------------------------------------------------ */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* compensa o header fixo nas âncoras */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  body {
+    background-color: var(--color-cream);
+    color: var(--color-graphite);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    letter-spacing: -0.01em;
+  }
+
+  /* Foco visível e consistente para navegação por teclado */
+  :focus-visible {
+    outline: 3px solid var(--color-sage-500);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/*  Utilitários / componentes                                         */
+/* ------------------------------------------------------------------ */
+@layer components {
+  .container-x {
+    width: 100%;
+    max-width: 72rem; /* ~ max-w-6xl */
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
+
+  /* Links da navegação (desktop) */
+  .nav-link {
+    position: relative;
+    font-weight: 500;
+    color: var(--color-graphite-soft);
+    transition: color 0.2s ease;
+  }
+  .nav-link:hover {
+    color: var(--color-sage-600);
+  }
+  .nav-link[data-active='true'] {
+    color: var(--color-sage-600);
+  }
+  .nav-link[data-active='true']::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -0.4rem;
+    height: 2px;
+    border-radius: 2px;
+    background-color: var(--color-sage-500);
+  }
+
+  /* Reveal on scroll */
+  [data-reveal] {
+    opacity: 0;
+    transform: translateY(24px);
+    transition:
+      opacity 0.6s ease,
+      transform 0.6s ease;
+  }
+  [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+  }
+
+  /* Gira a seta do FAQ quando aberto */
+  [data-faq-toggle][aria-expanded='true'] svg {
+    transform: rotate(180deg);
+  }
+
+  /* Marca d'água sutil de dente ao fundo de uma seção */
+  .tooth-watermark {
+    position: relative;
+    isolation: isolate;
+  }
+  .tooth-watermark::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background-image: url('/img/tooth-motif.svg');
+    background-repeat: no-repeat;
+    background-position: right -4rem top -2rem;
+    background-size: 32rem;
+    opacity: 0.5;
+    pointer-events: none;
+  }
+}

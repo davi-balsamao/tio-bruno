@@ -1,0 +1,18 @@
+{
+  "name": "dr-bruno-ladeira-endodontia",
+  "version": "1.0.0",
+  "description": "Landing page de captação de pacientes do Dr. Bruno Ladeira - Endodontia (tratamento de canal) em Sete Lagoas/MG.",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.1.11",
+    "tailwindcss": "^4.1.11",
+    "typescript": "^5.7.3",
+    "vite": "^6.3.5"
+  }
+}
