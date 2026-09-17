@@ -15,13 +15,13 @@ export const site = {
   cidade: 'Sete Lagoas',
   estado: 'MG',
 
-  // TODO: confirmar com o Dr. Bruno
-  cro: 'CRO-MG 00000', // TODO: número real do CRO
-  rqe: 'RQE 0000', // TODO: registro de especialista em endodontia
-  endereco: 'Rua Exemplo, 000 — Centro, Sete Lagoas/MG', // TODO: endereço real
-  cep: '35700-000', // TODO
-  horarios: 'Segunda a sexta, das 8h às 18h', // TODO: horários reais
-  email: 'contato@drbrunoladeira.com.br', // TODO (opcional)
+  // TODO: preencher quando o Dr. Bruno confirmar (vazio = não exibido no site)
+  cro: '', // TODO: número real do CRO-MG
+  rqe: '', // TODO: registro de especialista em endodontia (RQE)
+  endereco: '', // TODO: endereço real do consultório
+  cep: '', // TODO
+  horarios: 'Horários flexíveis durante a semana', // ajustar quando confirmar dias/horas
+  email: '', // TODO (opcional)
   instagram: '', // TODO (opcional) ex: 'https://instagram.com/...'
 
   // Contato / WhatsApp — (31) 99911-8647
@@ -47,3 +47,42 @@ export const whatsappMensagens = {
 } as const;
 
 export type WhatsappContexto = keyof typeof whatsappMensagens;
+
+/**
+ * Casos clínicos exibidos na galeria (radiografias de canais tratados).
+ * As legendas são genéricas/ilustrativas — ajuste à vontade.
+ * Para adicionar/remover casos, basta editar esta lista.
+ */
+export interface Caso {
+  src: string;
+  alt: string;
+  caption: string;
+}
+
+const legendas = [
+  'Tratamento de canal — dentes posteriores',
+  'Canais radiculares obturados',
+  'Tratamento endodôntico concluído',
+  'Canais tratados em dente molar',
+  'Obturação dos canais radiculares',
+  'Endodontia — vista radiográfica',
+  'Canais radiculares tratados',
+  'Tratamento de canal finalizado',
+  'Endodontia de precisão',
+  'Retratamento endodôntico',
+  'Canais calcificados tratados',
+  'Obturação de múltiplos canais',
+  'Tratamento de canal em pré-molar',
+  'Endodontia em dente anterior',
+  'Canais tratados — vista apical',
+  'Tratamento endodôntico completo',
+  'Selamento dos canais radiculares',
+  'Endodontia com precisão de ápice',
+  'Tratamento de canal bem-sucedido',
+];
+
+export const casos: Caso[] = legendas.map((caption, i) => ({
+  src: `/img/caso-${i + 1}.jpg`,
+  alt: `Radiografia de tratamento de canal realizado pelo Dr. Bruno Ladeira — ${caption.toLowerCase()}`,
+  caption,
+}));

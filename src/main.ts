@@ -16,6 +16,7 @@ function fillData(): void {
     '[data-year]': String(new Date().getFullYear()),
   };
   for (const [selector, value] of Object.entries(map)) {
+    if (!value) continue; // não sobrescreve com valor vazio (dado não confirmado)
     document.querySelectorAll(selector).forEach((el) => {
       el.textContent = value;
     });

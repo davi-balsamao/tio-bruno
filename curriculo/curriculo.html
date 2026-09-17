@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Currículo — Dr. Bruno Ladeira</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700;800&family=Noto+Sans:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --sage: #7c9885;
+        --sage-dark: #4f6957;
+        --sage-deep: #2c3830;
+        --graphite: #2b3230;
+        --graphite-soft: #4a534f;
+        --cream: #f5f3ee;
+        --cream-deep: #ece8df;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      @page {
+        size: A4;
+        margin: 0;
+      }
+
+      html {
+        font-family: 'Noto Sans', system-ui, sans-serif;
+        color: var(--graphite);
+        font-size: 10.5pt;
+        line-height: 1.5;
+      }
+
+      h1,
+      h2,
+      h3 {
+        font-family: 'Figtree', system-ui, sans-serif;
+        letter-spacing: -0.01em;
+      }
+
+      .page {
+        width: 210mm;
+        min-height: 297mm;
+        margin: 0 auto;
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+      }
+
+      /* ---------------- Cabeçalho ---------------- */
+      .header {
+        display: flex;
+        gap: 22px;
+        align-items: center;
+        padding: 26px 30px;
+        background: var(--sage-deep);
+        color: var(--cream);
+      }
+
+      .header .photo {
+        width: 118px;
+        height: 118px;
+        flex: none;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: top center;
+        border: 4px solid rgba(255, 255, 255, 0.85);
+      }
+
+      .header .name {
+        font-size: 25pt;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+
+      .header .role {
+        font-size: 11.5pt;
+        font-weight: 600;
+        color: #cdd9cf;
+        margin-top: 4px;
+      }
+
+      .header .contact {
+        margin-top: 12px;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 18px;
+        font-size: 9.5pt;
+        color: #e4ebe4;
+      }
+
+      .header .contact span {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+      }
+
+      .dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--sage);
+        flex: none;
+      }
+
+      /* ---------------- Corpo ---------------- */
+      .body {
+        padding: 22px 30px 0;
+        flex: 1;
+      }
+
+      .section {
+        margin-bottom: 18px;
+      }
+
+      .section h2 {
+        font-size: 12pt;
+        font-weight: 700;
+        color: var(--sage-dark);
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding-bottom: 5px;
+        border-bottom: 2px solid var(--cream-deep);
+        margin-bottom: 10px;
+      }
+
+      .lead {
+        color: var(--graphite-soft);
+      }
+
+      .lead strong {
+        color: var(--graphite);
+        font-weight: 600;
+      }
+
+      /* Experiência */
+      .job {
+        margin-bottom: 11px;
+      }
+      .job .title {
+        font-family: 'Figtree', sans-serif;
+        font-weight: 700;
+        font-size: 11pt;
+      }
+      .job .meta {
+        color: var(--sage-dark);
+        font-weight: 600;
+        font-size: 9.5pt;
+        margin-bottom: 2px;
+      }
+      .job .desc {
+        color: var(--graphite-soft);
+      }
+
+      /* Competências / convênios em chips */
+      .chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+      }
+      .chip {
+        background: var(--cream);
+        border: 1px solid var(--cream-deep);
+        color: var(--sage-dark);
+        font-weight: 600;
+        font-size: 9.5pt;
+        padding: 5px 12px;
+        border-radius: 999px;
+      }
+
+      .two-col {
+        display: flex;
+        gap: 26px;
+      }
+      .two-col > div {
+        flex: 1;
+      }
+
+      /* Casos clínicos */
+      .cases {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 9px;
+      }
+      .cases figure {
+        border: 1px solid var(--cream-deep);
+        border-radius: 8px;
+        overflow: hidden;
+        background: var(--cream);
+      }
+      .cases img {
+        width: 100%;
+        height: 82px;
+        object-fit: cover;
+        display: block;
+      }
+      .cases figcaption {
+        font-size: 7.5pt;
+        color: var(--graphite-soft);
+        text-align: center;
+        padding: 4px 4px 5px;
+      }
+      .note {
+        font-size: 8pt;
+        color: var(--graphite-soft);
+        margin-top: 6px;
+      }
+
+      /* Rodapé */
+      .footer {
+        margin-top: auto;
+        background: var(--cream);
+        border-top: 3px solid var(--sage);
+        padding: 12px 30px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 9pt;
+        color: var(--graphite-soft);
+      }
+      .footer strong {
+        color: var(--graphite);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <img class="photo" src="img/dr-bruno.jpg" alt="Dr. Bruno Ladeira" />
+        <div>
+          <div class="name">Dr. Bruno Ladeira</div>
+          <div class="role">Cirurgião-Dentista · Especialista em Endodontia</div>
+          <div class="contact">
+            <span><span class="dot"></span> (31) 99911-8647</span>
+            <span><span class="dot"></span> Sete Lagoas e região — MG</span>
+            <span><span class="dot"></span> CRO-MG: (a informar)</span>
+          </div>
+        </div>
+      </header>
+
+      <main class="body">
+        <section class="section">
+          <h2>Resumo profissional</h2>
+          <p class="lead">
+            Cirurgião-dentista <strong>especialista em endodontia há 16 anos</strong>, dedicado ao
+            tratamento de canal com técnica, precisão e atendimento humanizado. Proprietário de clínica
+            odontológica própria desde 2008 e atualmente <strong>disponível para atuar como endodontista
+            parceiro</strong> em clínicas na região de Sete Lagoas/MG, com horários abertos durante a semana.
+          </p>
+        </section>
+
+        <section class="section">
+          <h2>Experiência profissional</h2>
+          <div class="job">
+            <div class="title">Endodontista parceiro — Clínicas odontológicas</div>
+            <div class="meta">Sete Lagoas e região, MG · atuação contínua</div>
+            <div class="desc">
+              Atendimento de endodontia (tratamento de canal, retratamento e urgências) em parceria com
+              clínicas, integrando o corpo clínico com agenda flexível.
+            </div>
+          </div>
+          <div class="job">
+            <div class="title">Proprietário e endodontista — Líder Odontologia</div>
+            <div class="meta">Sete Lagoas, MG · desde 2008</div>
+            <div class="desc">
+              Fundação e condução de clínica odontológica própria, com foco em endodontia e cuidado
+              centrado no paciente.
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="two-col">
+            <div>
+              <h2>Especialidade &amp; competências</h2>
+              <div class="chips">
+                <span class="chip">Tratamento de canal</span>
+                <span class="chip">Retratamento endodôntico</span>
+                <span class="chip">Urgências em endodontia</span>
+                <span class="chip">Diagnóstico por imagem</span>
+                <span class="chip">Atendimento humanizado</span>
+              </div>
+            </div>
+            <div>
+              <h2>Convênios atendidos</h2>
+              <div class="chips">
+                <span class="chip">Unimed</span>
+                <span class="chip">Amil</span>
+                <span class="chip">SulAmérica</span>
+                <span class="chip">Particular</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="section">
+          <h2>Casos clínicos realizados</h2>
+          <div class="cases">
+            <figure>
+              <img src="img/caso-1.jpg" alt="Radiografia de tratamento de canal" />
+              <figcaption>Tratamento de canal</figcaption>
+            </figure>
+            <figure>
+              <img src="img/caso-4.jpg" alt="Radiografia de canais em molar" />
+              <figcaption>Canais em molar</figcaption>
+            </figure>
+            <figure>
+              <img src="img/caso-7.jpg" alt="Radiografia de canais tratados" />
+              <figcaption>Canais tratados</figcaption>
+            </figure>
+            <figure>
+              <img src="img/caso-11.jpg" alt="Radiografia de retratamento" />
+              <figcaption>Retratamento</figcaption>
+            </figure>
+          </div>
+          <p class="note">Imagens clínicas reais, sem identificação de pacientes.</p>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span><strong>Dr. Bruno Ladeira</strong> · Especialista em Endodontia</span>
+        <span>WhatsApp <strong>(31) 99911-8647</strong></span>
+      </footer>
+    </div>
+  </body>
+</html>
