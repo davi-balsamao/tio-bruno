@@ -15,11 +15,11 @@ export const site = {
   cidade: 'Sete Lagoas',
   estado: 'MG',
 
-  // TODO: preencher quando o Dr. Bruno confirmar (vazio = não exibido no site)
-  cro: '', // TODO: número real do CRO-MG
-  rqe: '', // TODO: registro de especialista em endodontia (RQE)
-  endereco: '', // TODO: endereço real do consultório
-  cep: '', // TODO
+  // Dados confirmados pelo Dr. Bruno
+  cro: 'CRO-MG 34117',
+  rqe: '', // TODO: registro de especialista em endodontia (RQE), se houver
+  endereco: 'Rua Professor Abeylard, 279 — Centro, Sete Lagoas/MG',
+  cep: '', // TODO (opcional)
   horarios: 'Horários flexíveis durante a semana', // ajustar quando confirmar dias/horas
   email: '', // TODO (opcional)
   instagram: '', // TODO (opcional) ex: 'https://instagram.com/...'
